@@ -1,23 +1,20 @@
 
 import java.io.*;
 
-public class App {
+public class Main {
     public static void main(String[] args) {
 
-        String fileName = "";
-        if (args.length > 0) {
-            fileName = args[0];
-        } else {
+        if (args.length <= 0) {
             System.err.println("No file provided, exiting program");
-            System.exit(0);
-        }
+            System.exit(1);
+         }
 
         try {
-            Reader reader = new FileReader(fileName);
+            Reader reader = new FileReader(args[0]);
             FileParser fp = new FileParser(reader);
             fp.readFile();
         } catch (Exception e) {
-        }
+        }   
 
     }
 }
