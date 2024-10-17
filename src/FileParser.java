@@ -81,7 +81,7 @@ public class FileParser {
             System.out.printf("\tHighest: %s, %.2f\n", categoryData.getHighestRatedName(), categoryData.getHighestRating());
             System.out.printf("\tLowest: %s, %.2f\n", categoryData.getLowestRatedName(), categoryData.getLowestRating());
             System.out.printf("\tAverage: %.2f\n", categoryData.getTotalRating()/categoryData.getCategoryCount());
-            System.out.printf("\tCount: %d\n", categoryData.getCategoryCount());
+            System.out.printf("\tCount: %d\n", categoryData.getCategoryCount() + categoryData.getDiscardedCount());
             System.out.printf("\tDiscarded: %d\n", categoryData.getDiscardedCount());
             System.out.println();
         }
