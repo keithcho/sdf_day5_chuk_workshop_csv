@@ -34,7 +34,7 @@ public class FileParser {
             // System.out.println(appName + ", " + category + ", " + appRating + ", " + cellRow[2]);
             // If cellData does not contain the category, create a new entry with the category
             if (!cellData.containsKey(category)) {
-                if (appRating > 0 && appRating < 5) {
+                if (appRating >= 0 && appRating <= 5) {
                     CategoryData categoryData = new CategoryData(category);
                     categoryData.setHighestRatedName(appName);
                     categoryData.setLowestRatedName(appName);
@@ -49,7 +49,7 @@ public class FileParser {
                 }
             } else if (cellData.containsKey(category)) {
                 // If cellData contains category and rating is valid, add to category
-                if (appRating > 0 && appRating < 5) {
+                if (appRating >= 0 && appRating <= 5) {
                     CategoryData categoryData = cellData.get(category);
                     if (appRating > categoryData.getHighestRating()) {
                         // Set new highest rating and name
