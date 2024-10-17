@@ -13,7 +13,9 @@ public class Main {
             Reader reader = new FileReader(args[0]);
             FileParser fp = new FileParser(reader);
             fp.readFile();
+            fp.printCategories();
         } catch (Exception e) {
+            e.printStackTrace();
         }   
 
     }
