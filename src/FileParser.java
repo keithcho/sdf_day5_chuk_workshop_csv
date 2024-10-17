@@ -21,8 +21,10 @@ public class FileParser {
 
         while ((line = br.readLine()) != null) {
             String[] cellRow = line.split(",");
+            // Extract app name, category and rating
             String appName = cellRow[0];
             String category = cellRow[1];
+            // Set non-numeric values for app ratings to be -1
             double appRating;
             try {
                 appRating = Double.parseDouble(cellRow[2]);
@@ -69,11 +71,6 @@ public class FileParser {
             }
             totalLines += 1;
         }
-
-        // System.out.println(Arrays.toString(cellHeader));
-        // System.out.println(Arrays.asList(cellData));
-        // cellData.forEach((key, value) -> System.out.println(key + " " + value));
-        // System.out.printf("Total lines in file: %d", totalLines); 
 
     }
 

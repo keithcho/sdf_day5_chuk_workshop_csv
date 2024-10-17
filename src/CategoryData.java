@@ -9,7 +9,6 @@ public class CategoryData {
     private Integer discardedCount = 0;
     private Integer categoryLines = 1;
 
-
     public CategoryData(String categoryName) {
         this.categoryName = categoryName;
     }
